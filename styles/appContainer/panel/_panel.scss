@@ -1,0 +1,70 @@
+.panel {
+	background-color: #2b363c;
+	width: 350px;
+	padding: 15px 31px;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid #4b5155;
+		padding-bottom: 12px;
+	}
+	&__first-heading {
+		font-size: 18px;
+		font-weight: normal;
+	}
+	&__collapse-icon {
+		color: #6b7276;
+		cursor: pointer;
+	}
+	&__images {
+		padding: 25px 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	&__img {
+		height: 140px;
+		width: 140px;
+		object-fit: cover;
+		border-radius: 7px;
+		cursor: pointer;
+		transition: all 0.2s;
+
+		@for $count from 1 to 6 {
+			&:nth-child(#{$count}) {
+				animation: manifestation 1s calc($count * 2 / 10) backwards;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			transform: scale(1.05);
+		}
+	}
+	&__btn {
+		height: 140px;
+		width: 140px;
+		border-radius: 7px;
+		background-color: #333e44;
+		cursor: pointer;
+
+		transition: all 0.2s;
+
+		&:hover,
+		&:focus {
+			background-color: #404c52;
+		}
+	}
+	&__upload-icon {
+		font-size: 25px;
+		color: #21292d;
+	}
+}
+
+@media (max-width: 1200px) {
+	.panel {
+		display: none;
+	}
+}

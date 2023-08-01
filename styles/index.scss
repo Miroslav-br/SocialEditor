@@ -1,0 +1,60 @@
+/*Reset styles*/
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	outline: none;
+}
+
+/* Key frames*/
+
+@keyframes manifestation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Base styles*/
+.app {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	height: 100vh;
+	color: #fff;
+	width: 100vw;
+
+	&__container {
+		height: calc(100% - 55px);
+		display: flex;
+	}
+}
+
+@media (max-width: 1000px) {
+	.app {
+		&__container {
+			height: 100%;
+		}
+	}
+}
+
+/* Imports */
+
+@import './header/header', './appContainer/appContainer';

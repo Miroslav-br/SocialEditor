@@ -1,0 +1,75 @@
+.header {
+	background-image: linear-gradient(to right, #18a0be, #622bb9);
+	height: 55px;
+	display: flex;
+	padding: 0 20px;
+	overflow-y: hidden;
+
+	&__logo {
+		margin-right: 30px;
+		align-self: center;
+		animation: manifestation 0.5s, fade-in-from-top 0.8s;
+	}
+	&__toggle {
+		color: rgba(255, 255, 255, 0.7);
+		padding: 0 13px;
+		cursor: pointer;
+		transition: all 0.2s;
+		animation: manifestation 0.5s, fade-in-from-top 0.8s;
+
+		&:nth-of-type(4) {
+			margin-left: auto;
+		}
+
+		&:hover {
+			color: #fff;
+			background-color: rgba(255, 255, 255, 0.07);
+		}
+
+		&:focus {
+			color: #fff;
+			background-color: rgba(255, 255, 255, 0.07);
+		}
+
+		&:last-child {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+@keyframes fade-in-from-top {
+	0% {
+		transform: translateY(-10px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.toggle {
+	&__img {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		margin-right: 5px;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+@media (max-width: 580px) {
+	.header {
+		justify-content: space-between;
+	}
+
+	.toggle:nth-of-type(1),
+	.toggle:nth-of-type(2),
+	.toggle:nth-of-type(3),
+	.toggle:nth-of-type(4),
+	.toggle:nth-of-type(5) {
+		display: none;
+	}
+}
